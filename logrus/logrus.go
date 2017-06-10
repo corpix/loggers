@@ -40,6 +40,11 @@ func (l *Logrus) Write(buf []byte) (int, error) {
 	return n, nil
 }
 
+// Level returns a current logger level number.
+func (l *Logrus) Level() uint32 {
+	return uint32(l.Logger.Level)
+}
+
 // New wraps logrus logger with binding.
 func New(l *logrus.Logger) *Logrus {
 	return &Logrus{l}

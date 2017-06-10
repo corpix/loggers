@@ -47,4 +47,6 @@ type Logger interface {
 	Println(...interface{})
 	Error(...interface{})
 	Fatal(...interface{})
+
+	Level() uint32
 }
