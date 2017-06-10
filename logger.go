@@ -48,5 +48,5 @@ type Logger interface {
 	Error(...interface{})
 	Fatal(...interface{})
 
-	Level() uint32
+	Level() interface{}
 }

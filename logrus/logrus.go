@@ -41,8 +41,8 @@ func (l *Logrus) Write(buf []byte) (int, error) {
 }
 
 // Level returns a current logger level number.
-func (l *Logrus) Level() uint32 {
-	return uint32(l.Logger.Level)
+func (l *Logrus) Level() interface{} {
+	return l.Logger.Level
 }
 
 // New wraps logrus logger with binding.
