@@ -1,4 +1,4 @@
-package logger
+package nsq
 
 // The MIT License (MIT)
 //
@@ -22,23 +22,8 @@ package logger
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import (
-	"io"
-)
-
-// Logger is a application level interface.
-type Logger interface {
-	io.Writer
-
-	Debugf(string, ...interface{})
-	Printf(string, ...interface{})
-	Errorf(string, ...interface{})
-	Fatalf(string, ...interface{})
-
-	Debug(...interface{})
-	Print(...interface{})
-	Error(...interface{})
-	Fatal(...interface{})
-
-	Level() interface{}
+// Encoder is an interface which describes encoder for some
+// type of data.
+type Encoder interface {
+	Encode(v interface{}) ([]byte, error)
 }

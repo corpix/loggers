@@ -1,4 +1,4 @@
-package logger
+package nsq
 
 // The MIT License (MIT)
 //
@@ -22,23 +22,14 @@ package logger
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import (
-	"io"
-)
+// Message is a logger message data.
+type Message struct {
+	Level   string
+	Payload interface{}
+}
 
-// Logger is a application level interface.
-type Logger interface {
-	io.Writer
-
-	Debugf(string, ...interface{})
-	Printf(string, ...interface{})
-	Errorf(string, ...interface{})
-	Fatalf(string, ...interface{})
-
-	Debug(...interface{})
-	Print(...interface{})
-	Error(...interface{})
-	Fatal(...interface{})
-
-	Level() interface{}
+// NewMessage creates new Message with logging level as string and
+// payload in original type.
+func NewMessage(lvl Level, payload interface{}) *Message {
+	return &Message{lvl.String(), payload}
 }

@@ -1,4 +1,4 @@
-package logger
+package nsq
 
 // The MIT License (MIT)
 //
@@ -23,22 +23,16 @@ package logger
 // THE SOFTWARE.
 
 import (
-	"io"
+	"encoding/json"
 )
 
-// Logger is a application level interface.
-type Logger interface {
-	io.Writer
+// JSONEncoder is an Encoder interface implementation for JSON.
+type JSONEncoder struct{}
 
-	Debugf(string, ...interface{})
-	Printf(string, ...interface{})
-	Errorf(string, ...interface{})
-	Fatalf(string, ...interface{})
-
-	Debug(...interface{})
-	Print(...interface{})
-	Error(...interface{})
-	Fatal(...interface{})
-
-	Level() interface{}
+// Encode encodes data to JSON.
+func (e *JSONEncoder) Encode(v interface{}) ([]byte, error) {
+	return json.Marshal(v)
 }
+
+// NewJSONEncoder creates new Encoder.
+func NewJSONEncoder() Encoder { return &JSONEncoder{} }

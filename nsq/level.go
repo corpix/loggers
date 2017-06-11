@@ -1,4 +1,4 @@
-package logger
+package nsq
 
 // The MIT License (MIT)
 //
@@ -22,23 +22,27 @@ package logger
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import (
-	"io"
+const (
+	DebugLevel Level = iota
+	InfoLevel
+	ErrorLevel
+	FatalLevel
 )
 
-// Logger is a application level interface.
-type Logger interface {
-	io.Writer
+// Level is a logger level.
+type Level uint8
 
-	Debugf(string, ...interface{})
-	Printf(string, ...interface{})
-	Errorf(string, ...interface{})
-	Fatalf(string, ...interface{})
-
-	Debug(...interface{})
-	Print(...interface{})
-	Error(...interface{})
-	Fatal(...interface{})
-
-	Level() interface{}
+func (l Level) String() string {
+	switch l {
+	case DebugLevel:
+		return "DEBU"
+	case InfoLevel:
+		return "INFO"
+	case ErrorLevel:
+		return "ERRO"
+	case FatalLevel:
+		return "FATA"
+	default:
+		return "INFO"
+	}
 }

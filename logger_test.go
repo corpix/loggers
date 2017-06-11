@@ -31,6 +31,9 @@ import (
 )
 
 func TestLogrus(t *testing.T) {
-	l := logrusLogger.New(logrus.New())
+	var (
+		l Logger = logrusLogger.New(logrus.New())
+	)
+
 	l.Debug("It is working")
 }

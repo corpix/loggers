@@ -24,6 +24,8 @@ package logrus
 
 import (
 	"github.com/sirupsen/logrus"
+
+	"github.com/corpix/logger"
 )
 
 // Logrus is a logrus for logger that implements
@@ -46,6 +48,6 @@ func (l *Logrus) Level() interface{} {
 }
 
 // New wraps logrus logger with binding.
-func New(l *logrus.Logger) *Logrus {
+func New(l *logrus.Logger) logger.Logger {
 	return &Logrus{l}
 }
