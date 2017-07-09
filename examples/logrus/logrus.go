@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/sirupsen/logrus"
 
-	logrusLogger "github.com/corpix/logger/logrus"
+	logrusLogger "github.com/corpix/logger/target/logrus"
 )
 
 func main() {

@@ -8,6 +8,7 @@ import (
 	"github.com/nsqio/go-nsq"
 
 	"github.com/corpix/logger"
+	"github.com/corpix/logger/encoder"
 )
 
 // Config configuration for logger.
@@ -21,7 +22,7 @@ type Nsq struct {
 	config   Config
 	producer *nsq.Producer
 	fallback logger.Logger
-	Encoder
+	encoder.Encoder
 }
 
 // Write slice of bytes into the logger and return number of written
@@ -96,6 +97,6 @@ func (l *Nsq) Level() interface{} {
 }
 
 // New wraps nsq producer with Logger interface implementation.
-func New(c Config, p *nsq.Producer, f logger.Logger, e Encoder) logger.Logger {
+func New(c Config, p *nsq.Producer, f logger.Logger, e encoder.Encoder) logger.Logger {
 	return &Nsq{c, p, f, e}
 }

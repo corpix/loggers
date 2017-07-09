@@ -4,8 +4,9 @@ import (
 	"github.com/nsqio/go-nsq"
 	"github.com/sirupsen/logrus"
 
-	logrusLogger "github.com/corpix/logger/logrus"
-	nsqLogger "github.com/corpix/logger/nsq"
+	"github.com/corpix/logger/encoder"
+	logrusLogger "github.com/corpix/logger/target/logrus"
+	nsqLogger "github.com/corpix/logger/target/nsq"
 )
 
 func main() {
@@ -23,7 +24,7 @@ func main() {
 		c,
 		p,
 		logrusLogger.New(logrus.New()),
-		nsqLogger.NewJSONEncoder(),
+		encoder.NewJSON(),
 	)
 
 	l.Debug("Hidden")

@@ -1,4 +1,4 @@
-package nsq
+package encoder
 
 // Encoder is an interface which describes encoder for some
 // type of data.
