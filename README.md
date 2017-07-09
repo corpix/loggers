@@ -5,9 +5,10 @@ logger
 
 Simple logging interface and implementations for various loggers.
 
-## Supported loggers
+## Supported log targets
 
 - logrus
+- nsq
 
 ## License
 
