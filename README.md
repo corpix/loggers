@@ -9,7 +9,3 @@ Simple logging interface and implementations for various loggers.
 
 - logrus
 - nsq
-
-## License
-
-MIT
