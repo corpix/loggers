@@ -1,5 +1,5 @@
 hash: efaf77042084a909c18897f2fc6228e145abf83fdeb32b2e4102726ed84683bc
-updated: 2017-07-12T20:40:13.931155775Z
+updated: 2017-07-17T16:50:29.490241589Z
 imports:
 - name: github.com/mreiferson/go-snappystream
   version: 028eae7ab5c4c9e2d1cb4c4ca1e53259bbe7e504
@@ -10,7 +10,7 @@ imports:
 - name: github.com/sirupsen/logrus
   version: 7f976d3a76720c4c27af2ba716b85d2e0a7e38b1
 - name: golang.org/x/sys
-  version: abf9c25f54453410d0c6668e519582a9e1115027
+  version: 4cd6d1a821c7175768725b55ca82f14683a29ea4
   subpackages:
   - unix
 testImports: []
