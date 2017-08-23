@@ -4,10 +4,14 @@ import (
 	"github.com/sirupsen/logrus"
 
 	logrusLogger "github.com/corpix/logger/logger/logrus"
+	"github.com/corpix/logger/logger/prefixwrapper"
 )
 
 func main() {
-	l := logrusLogger.New(logrus.New())
+	l := prefixwrapper.New(
+		"prefix > ",
+		logrusLogger.New(logrus.New()),
+	)
 
 	_, err := l.Write([]byte("hello"))
 	if err != nil {

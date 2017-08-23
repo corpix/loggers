@@ -7,5 +7,6 @@ Simple logging interface and implementations for various loggers.
 
 ## Supported log targets
 
-- logrus
-- nsq
+- `logrus`, wrapper for [sirupsen/logrus](github.com/sirupsen/logrus) which implements `Logger`
+- `nsq`, logs to Nsq with fallback to other `Logger`
+- `prefixwrapper`, wraps any `Logger` interface messages with prefix

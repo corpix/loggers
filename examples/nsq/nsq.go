@@ -5,8 +5,8 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"github.com/corpix/logger/encoder"
-	logrusLogger "github.com/corpix/logger/target/logrus"
-	nsqLogger "github.com/corpix/logger/target/nsq"
+	logrusLogger "github.com/corpix/logger/logger/logrus"
+	nsqLogger "github.com/corpix/logger/logger/nsq"
 )
 
 func main() {
