@@ -4,9 +4,9 @@ import (
 	"github.com/nsqio/go-nsq"
 	"github.com/sirupsen/logrus"
 
-	"github.com/corpix/logger/encoder"
-	logrusLogger "github.com/corpix/logger/logger/logrus"
-	nsqLogger "github.com/corpix/logger/logger/nsq"
+	"github.com/corpix/loggers/encoder"
+	logrusLogger "github.com/corpix/loggers/logger/logrus"
+	nsqLogger "github.com/corpix/loggers/logger/nsq"
 )
 
 func main() {

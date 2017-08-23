@@ -5,7 +5,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/corpix/logger"
+	"github.com/corpix/loggers"
 )
 
 const (
@@ -43,12 +43,12 @@ func (l *Logrus) Level() interface{} {
 }
 
 // New wraps logrus logger with binding.
-func New(l *logrus.Logger) logger.Logger {
+func New(l *logrus.Logger) loggers.Logger {
 	return &Logrus{l}
 }
 
 // New creates and wraps new logrus logger with binding.
-func NewFromConfig(c Config) (logger.Logger, error) {
+func NewFromConfig(c Config) (loggers.Logger, error) {
 	var (
 		l   logrus.Level
 		f   logrus.Formatter

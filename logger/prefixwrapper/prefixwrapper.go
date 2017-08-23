@@ -1,7 +1,7 @@
 package prefixwrapper
 
 import (
-	"github.com/corpix/logger"
+	"github.com/corpix/loggers"
 )
 
 // PrefixWrapper is a wrapper for the Logger that
@@ -10,7 +10,7 @@ import (
 type PrefixWrapper struct {
 	bytePrefix   []byte
 	stringPrefix string
-	log          logger.Logger
+	log          loggers.Logger
 }
 
 func (w *PrefixWrapper) Write(rawMessage []byte) (int, error) {
@@ -100,7 +100,7 @@ func (w *PrefixWrapper) Fatal(rawXs ...interface{}) {
 }
 
 // New wraps Logger with PrefixWrapper.
-func New(prefix string, l logger.Logger) logger.Logger {
+func New(prefix string, l loggers.Logger) loggers.Logger {
 	return &PrefixWrapper{
 		bytePrefix:   []byte(prefix),
 		stringPrefix: prefix,

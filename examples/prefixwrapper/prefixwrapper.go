@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/sirupsen/logrus"
 
-	logrusLogger "github.com/corpix/logger/logger/logrus"
-	"github.com/corpix/logger/logger/prefixwrapper"
+	logrusLogger "github.com/corpix/loggers/logger/logrus"
+	"github.com/corpix/loggers/logger/prefixwrapper"
 )
 
 func main() {

@@ -1,5 +1,6 @@
 * DONE Implement prefix wrapper
   CLOSED: [2017-08-23 Wed 06:56]
-* TODO Rename to loggers
+* DONE Rename to loggers
+  CLOSED: [2017-08-23 Wed 07:49]
 * TODO Implement fallback logger as separate logger
 * TODO Migrate nsq to fallback logger
