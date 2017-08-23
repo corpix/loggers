@@ -52,17 +52,35 @@ func (l *Nsq) Write(buf []byte) (int, error) {
 	return n, err
 }
 
-func (l *Nsq) Debugf(s string, xs ...interface{}) { l.log(DebugLevel, fmt.Sprintf(s, xs)) }
-func (l *Nsq) Printf(s string, xs ...interface{}) { l.log(InfoLevel, fmt.Sprintf(s, xs)) }
-func (l *Nsq) Errorf(s string, xs ...interface{}) { l.log(ErrorLevel, fmt.Sprintf(s, xs)) }
+func (l *Nsq) Debugf(s string, xs ...interface{}) {
+	l.log(DebugLevel, fmt.Sprintf(s, xs))
+}
+
+func (l *Nsq) Printf(s string, xs ...interface{}) {
+	l.log(InfoLevel, fmt.Sprintf(s, xs))
+}
+
+func (l *Nsq) Errorf(s string, xs ...interface{}) {
+	l.log(ErrorLevel, fmt.Sprintf(s, xs))
+}
+
 func (l *Nsq) Fatalf(s string, xs ...interface{}) {
 	defer os.Exit(1)
 	l.log(FatalLevel, fmt.Sprintf(s, xs))
 }
 
-func (l *Nsq) Debug(xs ...interface{}) { l.log(DebugLevel, xs) }
-func (l *Nsq) Print(xs ...interface{}) { l.log(InfoLevel, xs) }
-func (l *Nsq) Error(xs ...interface{}) { l.log(ErrorLevel, xs) }
+func (l *Nsq) Debug(xs ...interface{}) {
+	l.log(DebugLevel, xs)
+}
+
+func (l *Nsq) Print(xs ...interface{}) {
+	l.log(InfoLevel, xs)
+}
+
+func (l *Nsq) Error(xs ...interface{}) {
+	l.log(ErrorLevel, xs)
+}
+
 func (l *Nsq) Fatal(xs ...interface{}) {
 	defer os.Exit(1)
 	l.log(FatalLevel, xs)
