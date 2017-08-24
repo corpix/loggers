@@ -1,7 +1,7 @@
 logger
 ---------
 
-[![Build Status](https://travis-ci.org/corpix/logger.svg?branch=master)](https://travis-ci.org/corpix/logger)
+[![Build Status](https://travis-ci.org/corpix/loggers.svg?branch=master)](https://travis-ci.org/corpix/loggers)
 
 Simple logging interface and implementations for various loggers.
 
