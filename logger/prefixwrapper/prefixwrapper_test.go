@@ -9,7 +9,7 @@ import (
 	"github.com/corpix/loggers/logger/memory"
 )
 
-func TestMemory(t *testing.T) {
+func TestPrefixWrapper(t *testing.T) {
 	type sample struct {
 		name   string
 		prefix string
