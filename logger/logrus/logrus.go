@@ -19,8 +19,8 @@ const (
 // Config is a logrus configuration which could be
 // customized.
 type Config struct {
-	Level     string
-	Formatter string
+	Level     string `validate:"required" default:"info"`
+	Formatter string `validate:"required" default:"json"`
 }
 
 // Logrus is a logrus for logger that implements

@@ -13,8 +13,8 @@ import (
 
 // Config configuration for logger.
 type Config struct {
-	Level Level
-	Topic string
+	Level Level  `validate:"required" default:"info"`
+	Topic string `validate:"required" default:"info"`
 }
 
 // Nsq is a logger which logs to nsq message queue.
