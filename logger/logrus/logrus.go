@@ -32,9 +32,8 @@ type Logrus struct {
 // Write slice of bytes into the logger and return number of written
 // bytes and error value of present.
 func (l *Logrus) Write(buf []byte) (int, error) {
-	n := len(buf) + 1
 	l.Printf("%s", buf)
-	return n, nil
+	return len(buf), nil
 }
 
 // Level returns a current logger level number.
