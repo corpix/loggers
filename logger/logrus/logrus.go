@@ -33,7 +33,7 @@ type Logrus struct {
 // bytes and error value of present.
 func (l *Logrus) Write(buf []byte) (int, error) {
 	n := len(buf) + 1
-	l.Printf("%s\n", buf)
+	l.Printf("%s", buf)
 	return n, nil
 }
 
